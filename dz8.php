@@ -29,5 +29,5 @@ if (isset($_POST["result"])){
 	 
 	
 }
-include 'dz7.html';
+include 'dz8.html';
 ?>
