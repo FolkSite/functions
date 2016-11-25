@@ -1,0 +1,38 @@
+
+<?php
+$html='';
+$html.= '
+<form method="POST">
+<input type="textarea" name="a" value=""> Text A<br>
+<input type="textarea" name="b" value=""> Text B <br>  
+<input type="submit" name="result"  value="Отправить">
+</form>
+	';
+$a=" ";
+$b=" ";
+if (isset($_POST["result"])){
+$a = $_POST ['a'];
+$b = $_POST ['b'];
+if ($_POST["result"]){
+function getCommonWords($a, $b){
+    $a=explode(' ',$a);
+    $b=explode(' ',$b);
+    for ($i = 0; $i < count($a); $i++) {
+        $test=false;
+        for ($j = 0; $j < count($b); $j++) {
+            if($a[$i]===$b[$j]){
+                $result[]=$a[$i];
+                $test=true;
+                break;
+            }
+        }if($test==false){
+			//echo "Строка а(".$a[$i].") не совпала\n";
+        }
+    }return $result;
+};
+};
+};
+
+echo $html;
+print_r(getCommonWords($a, $b));
+?>
