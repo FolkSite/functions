@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+ </head>
+<body>
+ <div align="center"><?=$formSend ? 'Форма успешно отправлена' : 'Ошибка отправки';  ?></div>
+	<table border="1px" >
+        <thead>
+    
+            <th>User</th>
+            <th>Comment</th>
+  
+        </thead>
+         <?php for ($i=0;$i<count($comment);$i++): ?>
+        <tbody>
+        <tr>
+            <td><?=$comments[$i]["user"]   ?></td>
+            <td><?=$comments[$i]["comment"]?></td>
+        </tr>
+        </tbody>
+         <?php endfor; ?>
+    </table>
+
+<form action="dz7.php" method="POST">
+	<p><input type="textarea" name="login" value=""> Login</p>
+	<p><input type="textarea" name="comment" value=""> Comment</p>
+	<p><input type="submit" name="result" value="Отправить"></p>
+</form>
+</body>
+</html>
